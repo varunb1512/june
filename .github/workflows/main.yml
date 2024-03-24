@@ -24,4 +24,8 @@ jobs:
           mvn -version
           echo "mallik"
 
+      - name: Creating .jar file
+        run: mvn install
+      
+
         
