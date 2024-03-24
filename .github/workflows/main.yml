@@ -2,3 +2,13 @@ name: Build and deploy JAR app to Azure Web App
 
 on:
   workflow_dispatch:
+
+jobs:
+  build:
+    steps:
+      - name: Install Java
+        run: 
+      - name: Install Maven
+        run:
+      - name: Check the version of Java and Maven
+        run:
