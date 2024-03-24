@@ -29,7 +29,7 @@ jobs:
 
       - name: to find .jar file and upload to the Github repository
         run: |
-          cd /target
+          cd target
           ls -l
           
       
