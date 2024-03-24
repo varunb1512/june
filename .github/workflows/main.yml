@@ -28,7 +28,9 @@ jobs:
         run: mvn install
 
       - name: to find .jar file and upload to the Github repository
-        run: ls -l
+        run: |
+          cd /target
+          ls -l
           
       
 
