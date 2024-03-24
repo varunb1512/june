@@ -5,10 +5,23 @@ on:
 
 jobs:
   build:
-    steps:
-      - name: Install Java
-        run: 
-      - name: Install Maven
-        run:
+    runs-on: ubuntu-latest
+    
+    steps:       
+      - name: Download code from Git
+        uses: actions/checkout@v4
+      
+      - name: Set up JDK 11
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+          
       - name: Check the version of Java and Maven
-        run:
+        run: |
+          java -version
+          mvn -version
+          echo "mallik"
+
+        
