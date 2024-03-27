@@ -38,14 +38,27 @@ jobs:
           name: 1stProjectArtifact
           path: target/jb-hello-world-maven-0.2.0.jar
 
+      # - name: Deploy to Azure Web App
+      #   uses: azure/webapps-deploy@v2
+      #   with:
+      #     app-name: Ap03272024
+      #     slot-name: production  # Change this if you use deployment slots
+      #     publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+      #     package: ${{ github.workspace }}/target/*.jar
+            
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_3AC2F27EFF0C45B9A52C89D0F864C3D1 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_47B5AF700F8B409490371C1814769075 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A98FA7BDF8FF44CDA5E804E1F67A24F5 }}
+
       - name: Deploy to Azure Web App
+        id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: Ap03272024
-          slot-name: production  # Change this if you use deployment slots
-          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ${{ github.workspace }}/target/*.jar
-            
-      
+          app-name: 'Ap03272024'
+          slot-name: 'Production'
+          package: '*.jar'
 
         
