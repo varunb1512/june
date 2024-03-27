@@ -32,11 +32,11 @@ jobs:
           cd target
           ls -l
           
-      - name: Upload artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: 1stProjectArtifact
-          path: target/jb-hello-world-maven-0.2.0.jar
+      # - name: Upload artifacts
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: 1stProjectArtifact
+      #     path: target/jb-hello-world-maven-0.2.0.jar
 
       # - name: Deploy to Azure Web App
       #   uses: azure/webapps-deploy@v2
@@ -59,6 +59,6 @@ jobs:
         with:
           app-name: 'Ap03272024'
           slot-name: 'Production'
-          package: '*.jar'
+          package: 'target/*.jar'
 
         
