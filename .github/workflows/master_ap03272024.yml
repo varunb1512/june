@@ -4,9 +4,9 @@
 name: Build and deploy JAR app to Azure Web App - Ap03272024
 
 on:
-  push:
-    branches:
-      - master
+  # push:
+  #   branches:
+  #     - master
   workflow_dispatch:
 
 jobs:
