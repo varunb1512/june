@@ -50,5 +50,5 @@ jobs:
           app-name: Ap03272024
           slot-name: production  # Change this if you use deployment slots
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_66a1b854dca24f6d9512af9330f507c3 }}
-          package: ${{ github.workspace }}/target/*.jar
+          package: ${{ github.workspace }}/target/jb-hello-world-maven-0.2.0.jar
             
