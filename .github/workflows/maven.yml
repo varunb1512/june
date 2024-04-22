@@ -22,12 +22,12 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-  docker:
-    runs-on: ubuntu-latest
-    needs: build
-    if: github.ref == 'refs/heads/master'
+  # docker:
+  #   runs-on: ubuntu-latest
+  #   needs: build
+  #   if: github.ref == 'refs/heads/master'
 
-    steps:
+    # steps:
     - name: Checkout code
       uses: actions/checkout@v3
     - name: Docker login
