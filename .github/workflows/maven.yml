@@ -40,7 +40,7 @@ jobs:
     - name : Location
       run: pwd
     - name: Build Docker image
-      run: docker build -t aman42988/helloworld:latest .
+      run: docker build -f Dockerfile -t aman42988/helloworld:latest .
 
     - name: Push Docker image to Docker Hub
       run: docker push aman42988/helloworld:latest
