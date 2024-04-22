@@ -5,7 +5,9 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
+defaults:
+  run:
+    working-directory: /home/runner/work/Hello_World/Hello_World/
 jobs:
   build:
 
