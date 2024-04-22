@@ -2,9 +2,12 @@ name: Java CI with Maven and Docker
 
 on:
   push:
-    branches: [ "master","feature"]
+    branches:
+      - master
+      - feature
   pull_request:
     branches: [ "master" ]
+
 defaults:
   run:
     working-directory: /home/runner/work/Hello_World/Hello_World/
