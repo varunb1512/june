@@ -37,6 +37,8 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
+    - name : Location
+      run: pwd
     - name: Build Docker image
       run: docker build -t aman42988/helloworld:latest .
 
