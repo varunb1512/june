@@ -2,7 +2,7 @@ name: Java CI with Maven and Docker
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master","feature"]
   pull_request:
     branches: [ "master" ]
 defaults:
