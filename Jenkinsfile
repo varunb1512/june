@@ -1,20 +1,26 @@
-pipeline{
+pipeline {
     agent any
 
     tools {
-         maven 'maven'
-         
+        maven 'maven'  // Assumes Maven is installed and configured in Jenkins under 'Global Tool Configuration'
     }
 
-    
-        stage('build'){
-            steps{
-               bat 'mvn package'
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    if (isUnix()) {
+                        sh 'mvn package'  // Use `sh` for Linux/macOS
+                    } else {
+                        bat 'mvn package' // Use `bat` for Windows
+                    }
+                }
             }
         }
+
         stage('Archive Artifact') {
             steps {
-                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true  // Archives JAR file
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true  // Archives the built JAR file
             }
         }
     }
