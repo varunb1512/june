@@ -9,11 +9,8 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    if (isUnix()) {
                         sh 'mvn package'  // Use `sh` for Linux/macOS
-                    } else {
-                        bat 'mvn package' // Use `bat` for Windows
-                    }
+                    
                 }
             }
         }
