@@ -5,5 +5,5 @@ RUN mvn package
 
 FROM openjdk:17
 WORKDIR /app
-COPY --from=build /app/target/java-hello-world-with-maven-1.0-SNAPSHOT.jar app.jar
+COPY --from=build /app/target/jb-hello-world-maven-0.2.0.jar app.jar
 ENTRYPOINT ["java", "-jar", "app.jar"]
