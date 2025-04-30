@@ -43,18 +43,13 @@ jobs:
           set -e
           IMAGE=${{ secrets.DOCKERHUB_USERNAME }}/java-hello-world:latest
 
-          echo "🟡 Pulling latest image..."
+          echo "Pulling latest image..."
           docker pull $IMAGE
 
-          echo "🧹 Stopping existing container if running..."
-          if docker ps -q --filter "name=app" | grep -q .; then
-            docker stop app
-          fi
-
-          echo "🧽 Removing existing container if exists..."
+          echo "Stopping existing container if running..."
           if docker ps -a -q --filter "name=app" | grep -q .; then
-            docker rm app
+            docker rm -f app
           fi
 
-          echo "✅ Running container on port 8080..."
+          echo "Running container on port 8080..."
           docker run -d --name app -p 8080:8080 $IMAGE
