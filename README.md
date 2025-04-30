@@ -1,5 +1,5 @@
 # Building Java Projects with Maven
-THIS Is test
+THIS Is a test
 This guide walks you through using Maven to build a simple Java project.
 
 ## What you’ll build
