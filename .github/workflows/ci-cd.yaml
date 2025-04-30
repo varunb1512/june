@@ -1,5 +1,5 @@
 name: Build and Deploy Java App
-
+#trigger
 on:
   push:
     branches: [ master ]
