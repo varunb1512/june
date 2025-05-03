@@ -7,7 +7,7 @@
 При переходе по ссылке по адресу, выводится такая страница.
 ![image](https://github.com/user-attachments/assets/a20253aa-d3a5-4a41-b64d-3ab0213762ec)
 Был создан пользователь для self-hosted runner. Чтобы запускался цикл после пуша, runner на хосте с приложением должен быть запущен:
-![image](https://github.com/user-attachments/assets/2d19399f-a55a-4817-acd8-f34730c16549)
+![image](https://github.com/user-attachments/assets/335ff912-afdb-4520-8f36-7608ec670a9d)
 
 При пушах в репо, автоматически запускается сборка, версионирование и деплой.
 
