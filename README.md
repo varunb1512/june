@@ -13,13 +13,47 @@
 Секреты хранятся в Github Actions secrets.
 Разуемеется, мониторинг и логирование тоже настроены. В качестве стека использовано: Prometheus + Grafana, для инфрастурных логов используется ELK стек.
 Структура проекта:
+```
+root@Codeby:~/ex# tree
+.
+└── java-hello-world-with-maven
+    ├── Dockerfile
+    ├── README.md
+    ├── id_github_ci
+    ├── id_github_ci.pub
+    ├── pom.xml
+    ├── src
+    │   └── main
+    │       └── java
+    │           ── com
+    │              └── example
+    │                  └── helloweb
+    │                      ├── HelloController.java
+    │                      └── HelloWebApplication.java
+    │           
+    └── target
+        ├── classes
+        │   └── com
+        │       └── example
+        │           └── helloweb
+        │               ├── HelloController.class
+        │               └── HelloWebApplication.class
+        ├── generated-sources
+        │   └── annotations
+        ├── java-hello-web-0.1.0.jar
+        ├── java-hello-web-0.1.0.jar.original
+        ├── maven-archiver
+        │   └── pom.properties
+        └── maven-status
+            └── maven-compiler-plugin
+                └── compile
+                    └── default-compile
+                        ├── createdFiles.lst
+                        └── inputFiles.lst
 
+20 directories, 14 files
 ```
-  └── src
-        └── main
-            └── java
-                └── hello
-```
+
 
 This guide walks you through using Maven to build a simple Java project.
 
