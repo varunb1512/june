@@ -94,4 +94,4 @@ Elasticsearch слушает на 9200, выделено 512MB памяти. Log
 input — принимает логи от Filebeat по порту 5000 (по протоколу Beats). filter — обрабатывает syslog, если присутствует тег "syslog", применяет шаблон grok для парсинга и нормализует временные метки. output — сохраняет документы в Elasticsearch в индекс infrastructure-logs-YYYY.MM.dd.
 ![image](https://github.com/user-attachments/assets/5b74a4f5-764c-47b1-a41d-acaa27786f58)
 
-Репозиторий с файлами grafana + prometheus и elk находятся здесь(https://github.com/Depth-monster/elk-grafana)
+Репозиторий с файлами grafana + prometheus и elk находятся здесь https://github.com/Depth-monster/elk-grafana
