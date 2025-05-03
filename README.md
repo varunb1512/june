@@ -1,5 +1,25 @@
-#11 Building Java Projects with Maven
-THIS Is a test
+Финальный проект по курсу
+Задача:
+Реализовать полный цикл сборки-поставки приложения, используя
+практики CI/CD.
+
+Работа представляет из себя следующее:
+При переходе по ссылке по адресу, выводится такая страница.
+![image](https://github.com/user-attachments/assets/a20253aa-d3a5-4a41-b64d-3ab0213762ec)
+При пушах в репо, автоматически запускается сборка, версионирование и деплой.
+
+В качестве инструмента был выбран Github Actions.
+Секреты хранятся в Github Actions secrets.
+Разуемеется, мониторинг и логирование тоже настроены. В качестве стека использовано: Prometheus + Grafana, для инфрастурных логов используется ELK стек.
+Структура проекта:
+
+```
+  └── src
+        └── main
+            └── java
+                └── hello
+```
+
 This guide walks you through using Maven to build a simple Java project.
 
 ## What you’ll build
