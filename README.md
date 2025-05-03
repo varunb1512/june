@@ -83,6 +83,11 @@ Dockerfile:
 Второй этап использует openjdk:17, в него копируется уже собранный .jar.
 Приложение запускается с помощью команды java -jar app.jar.
 
+Как устроен мониторинг?
+Мониторинг построен на базе Prometheus и Grafana, с использованием Node Exporter для сбора метрик с хоста.
+Node Exporter запускается как контейнер и отдаёт системные метрики по адресу :9100. Prometheus по расписанию (каждые 15 секунд) делает HTTP scrape на адрес node-exporter:9100/metrics. Метрики сохраняются во внутреннюю базу данных Prometheus. Grafana подключается к Prometheus как источник данных и отображает метрики на дашборде.
+![image](https://github.com/user-attachments/assets/ceb62c09-4f4f-4c96-a80e-ef65a4a9b29f)
+
 
 ## What you’ll build
 You’ll create an application that provides the time of day and then build it with Maven.
