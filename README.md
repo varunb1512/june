@@ -53,9 +53,36 @@ root@Codeby:~/ex# tree
 
 20 directories, 14 files
 ```
-
+ Как разворачивается
+Разработчик пушит изменения в ветку master GitHub-репозитория.
+Запускается GitHub Actions workflow (.github/workflows/ci-cd.yaml), где:
+Устанавливается JDK 17.
+Выполняется сборка проекта с помощью Maven (mvn clean package).
+Строится Docker-образ через Dockerfile.
+Образ пушится на Docker Hub с двумя тегами:
+latest — всегда самый свежий
+commit-hash (например b3a2d1f) — версия, привязанная к коммиту.
+Через SSH подключение GitHub Actions подключается к удаленному серверу и:
+Скачивает последний образ
+Удаляет старый контейнер (если есть)
+Запускает новый контейнер на порту 8080.
 
 This guide walks you through using Maven to build a simple Java project.
+
+Версионирование
+При каждом пуше:
+создается тег IMAGE_TAG=${GITHUB_SHA::7} — это первые 7 символов SHA коммита.
+пример: java-hello-world:b3a2d1f
+Также добавляется тег latest для последней стабильной сборки.
+Таким образом, можно:
+Всегда иметь стабильную ссылку на последнюю версию (latest)
+Иметь уникальную ссылку на конкретную сборку (commit_sha), которую легко откатить или протестировать.
+
+Dockerfile:
+Первый этап (stage build) использует Maven для сборки .jar.
+Второй этап использует openjdk:17, в него копируется уже собранный .jar.
+Приложение запускается с помощью команды java -jar app.jar.
+
 
 ## What you’ll build
 You’ll create an application that provides the time of day and then build it with Maven.
