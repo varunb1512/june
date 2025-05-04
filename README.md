@@ -98,3 +98,4 @@ input — принимает логи от Filebeat по порту 5000 (по �
 ![image](https://github.com/user-attachments/assets/5b74a4f5-764c-47b1-a41d-acaa27786f58)
 
 Репозиторий с файлами grafana + prometheus и elk находятся здесь https://github.com/Depth-monster/elk-grafana
+  .
