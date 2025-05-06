@@ -7,3 +7,5 @@ dependency-reduced-pom.xml
 .settings/
 .vscode
 .DS_Store
+id_github_ci
+id_github_ci.pub
